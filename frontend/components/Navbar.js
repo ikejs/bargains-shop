@@ -6,11 +6,11 @@ const Navbar = () => {
       <Link href="/">
         <a>
           <img
-            src="/strapi.png"
+            src="/logo.png"
             alt="home"
             className="logo"
-            height="150"
-            width="150"
+            height="200"
+            width="200"
           />
         </a>
       </Link>
