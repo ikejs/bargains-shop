@@ -26,9 +26,6 @@ const ProductsList = ({ products }) => {
                   ${_product.value} {_product.type} for{" "}
                   <strong>${_product.price}</strong>
                 </div>
-                <div className="mt-4 text-sm text-gray-700">
-                  {_product.description}
-                </div>
               </div>
             </a>
           </Link>
