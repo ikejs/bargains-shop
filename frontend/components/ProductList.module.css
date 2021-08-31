@@ -1,0 +1,14 @@
+.image {
+  position: relative;
+  max-width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image img {
+  max-width: 100%;
+  object-fit: cover;
+  max-height: 300px;
+}

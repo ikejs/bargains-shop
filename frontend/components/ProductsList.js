@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getStrapiMedia } from "../utils/medias";
+import styles from "./ProductList.module.css";
 
 const ProductsList = ({ products }) => {
   return (
@@ -11,7 +12,7 @@ const ProductsList = ({ products }) => {
         >
           <Link href={`/products/${_product.slug}`}>
             <a>
-              <div className="rounded-t-lg bg-white pt-2 pb-2">
+              <div className={`rounded-t-lg bg-white pt-2 pb-2 ${styles.image}`}>
                 <img
                   className="crop mx-auto"
                   src={getStrapiMedia(_product.image.formats.thumbnail.url)}
@@ -24,7 +25,7 @@ const ProductsList = ({ products }) => {
                     <strong>{_product.title}</strong>
                   </p>
                   ${_product.value} {_product.type} for{" "}
-                  <strong>${_product.price}</strong>
+                  <strong className="text-green-600">${_product.price}</strong>
                 </div>
               </div>
             </a>

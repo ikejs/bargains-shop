@@ -12,7 +12,7 @@ const ProductPage = ({ product }) => {
   return (
     <div className="m-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 mt-8">
       <Head>
-        <title>{product.title} product</title>
+        <title>{product.title}</title>
       </Head>
       <div className="rounded-t-lg pt-2 pb-2">
         <img
@@ -23,10 +23,15 @@ const ProductPage = ({ product }) => {
       </div>
       <div className="w-full p-5 flex flex-col justify-between">
         <div>
-          <h4 className="mt-1 font-semibold text-lg leading-tight truncate text-gray-700">
-            {product.title} - ${product.price}
+          <h3 className="mt-1 font-semibold text-lg leading-tight truncate text-gray-700">
+            {product.title}
+          </h3>
+          <h4 className="mt-1 font-semibold text-md leading-tight truncate text-gray-700">
+            ${product.value} {product.type}
           </h4>
-          <div className="mt-1 text-gray-600">{product.description}</div>
+          <div className="mt-1 mb-2 text-gray-600">{product.description}</div>
+          <div className="mt-1 mb-2 font-semibold text-green-600">Price: ${product.price}</div>
+          <hr />
         </div>
 
         {product.status === "published" ? (
