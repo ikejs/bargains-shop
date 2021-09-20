@@ -1,3 +1,11 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+.snipcart-item-quantity__quantity {
+  display: none;
+}
+
+.snipcart-item-quantity__label.snipcart__font--tiny {
+  display: none;
+}

@@ -12,7 +12,7 @@ const CategoryPage = ({ category }) => {
   return (
     <div>
       <Head>
-        <title>{category.name} products</title>
+        <title>{category.name}</title>
       </Head>
       <ProductsList products={category.products} />
     </div>
