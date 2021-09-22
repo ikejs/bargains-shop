@@ -27,7 +27,7 @@ const MyApp = ({ Component, pageProps }) => {
 // https://github.com/vercel/next.js/discussions/10949
 MyApp.getServerSideProps = async (ctx) => {
   // Calls page's `getInitialProps` and fills `appProps.pageProps`
-  const appProps = await App.getInitialProps(ctx);
+  const appProps = await App.getServerSideProps(ctx);
   // Fetch global site settings from Strapi
   const categories = await getCategories();
   // Pass the data to our page via props
