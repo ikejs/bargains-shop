@@ -21,12 +21,12 @@ const CategoryPage = ({ category }) => {
 
 export default CategoryPage;
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const category = await getCategory(params.slug);
   return { props: { category } };
 }
 
-export async function getServerSideProps() {
+export async function getStaticPaths() {
   const categories = await getCategories();
   return {
     paths: categories.map((_category) => {
