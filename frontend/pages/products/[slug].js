@@ -76,7 +76,7 @@ export async function getStaticProps({ params }) {
   return { props: { product } };
 }
 
-export async function getStaticPaths() {
+export async function getServerSideProps() {
   const products = await getProducts();
   return {
     paths: products.map((_product) => {
