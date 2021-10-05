@@ -44,6 +44,7 @@ const ProductPage = ({ product }) => {
             data-item-image={getStrapiMedia(
               product.image.formats.thumbnail.url
             )}
+            data-item-max-quantity="1"
             data-item-name={product.title}
             v-bind="customFields"
           >
