@@ -35,6 +35,7 @@ MyApp.getStaticProps = async (ctx) => {
     ...appProps,
     pageProps: { categories, path: ctx.pathname },
     revalidate: 60,
+    fallback: "blocking",
   };
 };
 
