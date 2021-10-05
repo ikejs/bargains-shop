@@ -31,7 +31,11 @@ MyApp.getStaticProps = async (ctx) => {
   // Fetch global site settings from Strapi
   const categories = await getCategories();
   // Pass the data to our page via props
-  return { ...appProps, pageProps: { categories, path: ctx.pathname } };
+  return {
+    ...appProps,
+    pageProps: { categories, path: ctx.pathname },
+    revalidate: 60,
+  };
 };
 
 export default MyApp;
