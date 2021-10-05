@@ -25,17 +25,15 @@ const MyApp = ({ Component, pageProps }) => {
 // have getStaticProps. So [[...slug]] pages still get SSG.
 // Hopefully we can replace this with getStaticProps once this issue is fixed:
 // https://github.com/vercel/next.js/discussions/10949
-MyApp.getStaticProps = async (ctx) => {
+MyApp.getServerSideProps = async (ctx) => {
   // Calls page's `getInitialProps` and fills `appProps.pageProps`
-  const appProps = await App.getInitialProps(ctx);
+  const appProps = await App.getServerSideProps(ctx);
   // Fetch global site settings from Strapi
   const categories = await getCategories();
   // Pass the data to our page via props
   return {
     ...appProps,
     pageProps: { categories, path: ctx.pathname },
-    revalidate: 60,
-    fallback: "blocking",
   };
 };
 
