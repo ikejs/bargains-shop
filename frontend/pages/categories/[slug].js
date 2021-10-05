@@ -26,7 +26,7 @@ export async function getStaticProps({ params }) {
   return { props: { category } };
 }
 
-export async function getStaticPaths() {
+export async function getServerSideProps() {
   const categories = await getCategories();
   return {
     paths: categories.map((_category) => {
