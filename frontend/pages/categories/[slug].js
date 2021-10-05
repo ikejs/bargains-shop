@@ -26,14 +26,14 @@ export async function getServerSideProps({ params }) {
   return { props: { category } };
 }
 
-export async function getStaticPaths() {
-  const categories = await getCategories();
-  return {
-    paths: categories.map((_category) => {
-      return {
-        params: { slug: _category.slug },
-      };
-    }),
-    fallback: true,
-  };
-}
+// export async function getStaticPaths() {
+//   const categories = await getCategories();
+//   return {
+//     paths: categories.map((_category) => {
+//       return {
+//         params: { slug: _category.slug },
+//       };
+//     }),
+//     fallback: true,
+//   };
+// }

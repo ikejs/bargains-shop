@@ -76,14 +76,14 @@ export async function getServerSideProps({ params }) {
   return { props: { product } };
 }
 
-export async function getStaticPaths() {
-  const products = await getProducts();
-  return {
-    paths: products.map((_product) => {
-      return {
-        params: { slug: _product.slug },
-      };
-    }),
-    fallback: true,
-  };
-}
+// export async function getStaticPaths() {
+//   const products = await getProducts();
+//   return {
+//     paths: products.map((_product) => {
+//       return {
+//         params: { slug: _product.slug },
+//       };
+//     }),
+//     fallback: true,
+//   };
+// }
