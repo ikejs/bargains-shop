@@ -28,7 +28,7 @@ const ProductPage = ({ product }) => {
               : product.image.formats.thumbnail.url
           )}
           className="m-auto"
-          style={{ width: '70%' }}
+          style={{ width: "70%" }}
           alt={product.title}
         />
       </div>
