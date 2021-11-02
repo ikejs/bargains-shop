@@ -2,6 +2,8 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { getProduct } from "../../utils/api";
 import { getStrapiMedia } from "../../utils/medias";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ProductPage = ({ product }) => {
   const router = useRouter();
@@ -21,6 +23,18 @@ const ProductPage = ({ product }) => {
         <title>{product.title}</title>
       </Head>
       <div className="rounded-t-lg pt-2 pb-2">
+        <button
+          onClick={() => router.push("/")}
+          style={{
+            width: "30px",
+            height: "30px",
+            backgroundColor: "#7978B3",
+            color: "white",
+            borderRadius: "50%",
+          }}
+        >
+          <FontAwesomeIcon icon={faArrowLeft} />
+        </button>
         <img
           src={getStrapiMedia(
             product.image.formats.medium
@@ -53,7 +67,7 @@ const ProductPage = ({ product }) => {
             data-item-id={product.id}
             data-item-price={product.price}
             data-item-url={router.asPath}
-            data-item-description={product.description}
+            // data-item-description={product.description}
             data-item-image={getStrapiMedia(
               product.image.formats.thumbnail.url
             )}

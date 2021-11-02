@@ -3,6 +3,12 @@ import ProductsList from "../components/ProductsList";
 import { getProducts } from "../utils/api";
 
 const HomePage = ({ products }) => {
+  products = products
+    .filter((product) => product.status === "published")
+    .sort((a, b) => (a.title > b.title ? 1 : -1));
+
+    console.log(products);
+
   return (
     <div>
       <Head>
