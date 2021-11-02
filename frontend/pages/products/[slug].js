@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { getProducts, getProduct } from "../../utils/api";
+import { getProduct } from "../../utils/api";
 import { getStrapiMedia } from "../../utils/medias";
 
 const ProductPage = ({ product }) => {
@@ -10,9 +10,9 @@ const ProductPage = ({ product }) => {
   }
 
   if (product.description.includes("---")) {
-    product.description = product.description.split("----").map((bullet) => (
-      <ul style={{ marginBottom: "1em" }}>{bullet}</ul>
-    ))
+    product.description = product.description
+      .split("----")
+      .map((bullet) => <ul style={{ marginBottom: "1em" }}>{bullet}</ul>);
   }
 
   return (
