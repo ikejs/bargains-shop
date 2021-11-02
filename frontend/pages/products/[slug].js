@@ -9,7 +9,11 @@ const ProductPage = ({ product }) => {
     return <div>Loading category...</div>;
   }
 
-  product.description = product.description.split("----");
+  if (product.description.includes("---")) {
+    product.description = product.description.split("----").map((bullet) => (
+      <ul style={{ marginBottom: "1em" }}>{bullet}</ul>
+    ))
+  }
 
   return (
     <div className="m-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 mt-8">
@@ -19,7 +23,7 @@ const ProductPage = ({ product }) => {
       <div className="rounded-t-lg pt-2 pb-2">
         <img
           src={getStrapiMedia(product.image.formats.thumbnail.url)}
-          className="m-auto"
+          className="m-auto w-100"
           alt={product.title}
         />
       </div>
@@ -32,9 +36,7 @@ const ProductPage = ({ product }) => {
             ${product.value} {product.type}
           </h4>
           <div className="mt-1 mb-2 text-gray-600">
-            {product.description.map((bullet) => (
-              <p>• {bullet}</p>
-            ))}
+            <ol>{product.description}</ol>
           </div>
           <div className="mt-1 mb-2 font-semibold text-green-600">Price: ${product.price}</div>
           <hr />
