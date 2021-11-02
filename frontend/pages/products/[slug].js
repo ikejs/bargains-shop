@@ -9,6 +9,8 @@ const ProductPage = ({ product }) => {
     return <div>Loading category...</div>;
   }
 
+  product.description = product.description.split("----");
+
   return (
     <div className="m-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 mt-8">
       <Head>
@@ -29,7 +31,11 @@ const ProductPage = ({ product }) => {
           <h4 className="mt-1 font-semibold text-md leading-tight truncate text-gray-700">
             ${product.value} {product.type}
           </h4>
-          <div className="mt-1 mb-2 text-gray-600">{product.description}</div>
+          <div className="mt-1 mb-2 text-gray-600">
+            {product.description.map((bullet) => (
+              <p>• {bullet}</p>
+            ))}
+          </div>
           <div className="mt-1 mb-2 font-semibold text-green-600">Price: ${product.price}</div>
           <hr />
         </div>
@@ -45,6 +51,7 @@ const ProductPage = ({ product }) => {
               product.image.formats.thumbnail.url
             )}
             data-item-max-quantity="1"
+            data-item-shippable="true"
             data-item-name={product.title}
             v-bind="customFields"
           >
