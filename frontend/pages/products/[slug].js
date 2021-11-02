@@ -22,8 +22,13 @@ const ProductPage = ({ product }) => {
       </Head>
       <div className="rounded-t-lg pt-2 pb-2">
         <img
-          src={getStrapiMedia(product.image.formats.thumbnail.url)}
-          className="m-auto w-100"
+          src={getStrapiMedia(
+            product.image.formats.medium
+              ? product.image.formats.medium.url
+              : product.image.formats.thumbnail.url
+          )}
+          className="m-auto"
+          style={{ width: '70%' }}
           alt={product.title}
         />
       </div>
