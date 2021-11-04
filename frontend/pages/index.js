@@ -12,6 +12,25 @@ const HomePage = ({ products }) => {
       <Head>
         <title>Online Bargains - Radio Plus</title>
       </Head>
+      <div className="m-6 w-1/2">
+        <h4 class="text-2xl font-extrabold text-gray-700">Rules</h4>
+        <hr />
+        <ul className="list-disc ml-5 mt-2">
+          <li>
+            Limit 2 packages. No more than 1 package per person/household.
+          </li>
+          <li>
+            If your order is available, it will ship directly to you in 3
+            business days.
+          </li>
+          <li>
+            If your order is not available, you will receive credit on that purchase.
+          </li>
+          <li>
+            For this sale, orders are sold online, and mailed to you. No office pick up required.
+          </li>
+        </ul>
+      </div>
       <ProductsList products={products} />
     </div>
   );
