@@ -37,9 +37,9 @@ const ProductPage = ({ product }) => {
         </button>
         <img
           src={getStrapiMedia(
-            product.image.formats.medium
-              ? product.image.formats.medium.url
-              : product.image.formats.thumbnail.url
+            product.image?.formats?.medium
+              ? product.image.formats?.medium?.url
+              : product.image.formats?.thumbnail?.url
           )}
           className="m-auto"
           style={{ width: "70%" }}
@@ -69,7 +69,9 @@ const ProductPage = ({ product }) => {
             data-item-url={router.asPath}
             // data-item-description={product.description}
             data-item-image={getStrapiMedia(
-              product.image.formats.thumbnail.url
+              product.image?.formats?.medium
+                ? product.image.formats.medium.url
+                : product.image.formats?.thumbnail?.url
             )}
             data-item-max-quantity="1"
             data-item-shippable="true"

@@ -13,7 +13,7 @@ const HomePage = ({ products }) => {
         <title>Online Bargains - Radio Plus</title>
       </Head>
       <div className="m-6 w-1/2">
-        <h4 class="text-2xl font-extrabold text-gray-700">Rules</h4>
+        <h4 className="text-2xl font-extrabold text-gray-700">Rules</h4>
         <hr />
         <ul className="list-disc ml-5 mt-2">
           <li>
