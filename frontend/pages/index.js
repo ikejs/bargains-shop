@@ -12,8 +12,20 @@ const HomePage = ({ products }) => {
       <Head>
         <title>Online Bargains - Radio Plus</title>
       </Head>
-      <div className="m-6 w-1/2">
-        <p><small>Most certificates have a 30 day expiration, gift cards have no expiration date. We are not to be held liable if establishment closes before you use gift certificate, or if it expires before you get a chance to use it.</small></p>
+      <div className="m-6 lg:w-1/2 md:w-2/3">
+        <p>
+          <small>
+            Most certificates have a 30 day expiration, gift cards have no
+            expiration date. We are not to be held liable if establishment
+            closes before you use gift certificate, or if it expires before you
+            get a chance to use it.
+          </small>
+        </p>
+        <p>
+          <small>
+            <strong>No more than 1 package per person/household.</strong>
+          </small>
+        </p>
         {/* <h4 className="text-2xl font-extrabold text-gray-700">Rules</h4>
         <hr />
         <ul className="list-disc ml-5 mt-2">
