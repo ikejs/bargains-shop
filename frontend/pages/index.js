@@ -23,8 +23,15 @@ const HomePage = ({ products }) => {
         </p>
         <p>
           <small>
-            <strong>No more than 1 package per person/household.</strong>
+            <strong>
+              Limit 1 certificate per business, per household every 30 days. You
+              may only use 1 certificate per business visit and cannot combine 2
+              certificates on the same bill.
+            </strong>
           </small>
+        </p>
+        <p>
+          <small>Sales tax and tip not included.</small>
         </p>
         {/* <h4 className="text-2xl font-extrabold text-gray-700">Rules</h4>
         <hr />
