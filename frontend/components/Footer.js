@@ -8,7 +8,7 @@ const Footer = () => {
         </a>
       </p>
       <a
-        href="mailto:laurie@wfdl.com"
+        href="mailto:support@rpbargains.com"
         className="max-w-xs text-xs font-semibold text-gray-600"
       >
         Contact Us
