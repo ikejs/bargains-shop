@@ -52,6 +52,9 @@ const HomePage = ({ products }) => {
         </ul> */}
       </div>
       <ProductsList products={products} />
+      <center style={{ marginBottom: '2em' }}>
+        <small>For Waupun bargains, <a style={{ color: 'blue' }} target="_blank" href="https://www.radioplusinfo.com/onlinebargains/">click here</a>.</small>
+      </center>
     </div>
   );
 };
