@@ -12,7 +12,7 @@ const HomePage = ({ products }) => {
       <Head>
         <title>Online Bargains - Radio Plus</title>
       </Head>
-      <div className="m-6 lg:w-1/2 md:w-2/3">
+      {/* <div className="m-6 lg:w-1/2 md:w-2/3">
         <p>
           <small>
             Most certificates have a 30 day expiration, gift cards have no
@@ -33,28 +33,15 @@ const HomePage = ({ products }) => {
         <p>
           <small>Sales tax and tip not included.</small>
         </p>
-        {/* <h4 className="text-2xl font-extrabold text-gray-700">Rules</h4>
-        <hr />
-        <ul className="list-disc ml-5 mt-2">
-          <li>
-            Limit 2 packages. No more than 1 package per person/household.
-          </li>
-          <li>
-            If your order is available, it will ship directly to you in 3
-            business days.
-          </li>
-          <li>
-            If your order is not available, you will receive credit on that purchase.
-          </li>
-          <li>
-            For this sale, orders are sold online, and mailed to you. No office pick up required.
-          </li>
-        </ul> */}
-      </div>
-      <ProductsList products={products} />
+      </div> */}
       <center style={{ marginBottom: '2em' }}>
         <small>For Waupun radio program deals, <a style={{ color: 'blue' }} target="_blank" href="https://www.radioplusinfo.com/onlinebargains/">click here</a>.</small>
       </center>
+      <center style={{ marginTop: '6em' }}>
+        <h1 style={{ fontSize: '2em' }}>Store is down for maintenance 🔧</h1>
+        <h3>We will be back online by Monday</h3>
+      </center>
+      {/* <ProductsList products={products} /> */}
     </div>
   );
 };
