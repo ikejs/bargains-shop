@@ -10,7 +10,8 @@ const ProductsList = ({ products }) => {
           key={_product.id}
           className="border rounded-lg bg-gray-100 hover:shadow-lg shadow-md"
         >
-          <Link href={`/products/${_product.slug}`}>
+          {/* <Link href={`/products/${_product.slug}`}> */}
+          <Link href={`javascript:alert('Purchase at 210 S Main St Fond du Lac')`}>
             <a>
               <div className={`rounded-t-lg bg-white pt-2 pb-2 ${styles.image}`}>
                 <img

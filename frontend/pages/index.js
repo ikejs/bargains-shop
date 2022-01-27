@@ -38,10 +38,10 @@ const HomePage = ({ products }) => {
         <small>For Waupun radio program deals, <a style={{ color: 'blue' }} target="_blank" href="https://www.radioplusinfo.com/onlinebargains/">click here</a>.</small>
       </center>
       <center style={{ marginTop: '6em' }}>
-        <h1 style={{ fontSize: '2em' }}>Store is down for maintenance 🔧</h1>
-        <h3>We will be back online by Monday</h3>
+        <h1 style={{ fontSize: '2em' }}>Online ordering is down for maintenance 🔧</h1>
+        <h3>Bargains are available at 210 S Main St FDL</h3>
       </center>
-      {/* <ProductsList products={products} /> */}
+      <ProductsList products={products} />
     </div>
   );
 };
