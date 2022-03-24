@@ -12,15 +12,15 @@ const HomePage = ({ products }) => {
       <Head>
         <title>Online Bargains - Radio Plus</title>
       </Head>
-      {/* <div className="m-6 lg:w-1/2 md:w-2/3">
-        <p>
+      <div className="m-6 lg:w-1/2 md:w-2/3">
+        {/* <p>
           <small>
             Most certificates have a 30 day expiration, gift cards have no
             expiration date. We are not to be held liable if establishment
             closes before you use gift certificate, or if it expires before you
             get a chance to use it.
           </small>
-        </p>
+        </p> */}
         <p>
           <small>
             <strong>
@@ -31,9 +31,11 @@ const HomePage = ({ products }) => {
           </small>
         </p>
         <p>
-          <small>Sales tax and tip not included.</small>
+          <small>
+            Bargains are available to purchase in person with cash/check at 210 S Main Street, M,W,F 8a-4p, T, Th 8a-1p.
+          </small>
         </p>
-      </div> */}
+      </div>
       <center style={{ marginBottom: '2em' }}>
         <small>For Waupun radio program deals, <a style={{ color: 'blue' }} target="_blank" href="https://www.radioplusinfo.com/onlinebargains/">click here</a>.</small>
       </center>
