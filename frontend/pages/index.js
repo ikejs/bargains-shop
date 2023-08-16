@@ -37,7 +37,7 @@ const HomePage = ({ products }) => {
         </p>
       </div>
       <center style={{ marginBottom: '2em' }}>
-        <small>For Waupun radio program deals, <a style={{ color: 'blue' }} target="_blank" href="https://www.radioplusinfo.com/onlinebargains/">click here</a>.</small>
+        <small>For Waupun radio program deals, <a style={{ color: 'blue' }} target="_blank" href="https://www.radioplusinfo.com/save-big-shop-our-bargains/">click here</a>.</small>
       </center>
       {/* <center style={{ marginTop: '6em' }}>
         <h1 style={{ fontSize: '2em' }}>Online ordering is down for maintenance 🔧</h1>
