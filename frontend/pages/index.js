@@ -32,12 +32,23 @@ const HomePage = ({ products }) => {
         </p>
         <p>
           <small>
-            Bargains are available to purchase in person with cash/check at 210 S Main Street, M,W,F 8a-4p, T, Th 8a-1p.
+            Bargains are available to purchase in person with cash/check at 210
+            S Main Street, M-F 8a-4p.
           </small>
         </p>
       </div>
-      <center style={{ marginBottom: '2em' }}>
-        <small>For Waupun radio program deals, <a style={{ color: 'blue' }} target="_blank" href="https://www.radioplusinfo.com/save-big-shop-our-bargains/">click here</a>.</small>
+      <center style={{ marginBottom: "2em" }}>
+        <small>
+          For Waupun radio program deals,{" "}
+          <a
+            style={{ color: "blue" }}
+            target="_blank"
+            href="https://www.radioplusinfo.com/save-big-shop-our-bargains/"
+          >
+            click here
+          </a>
+          .
+        </small>
       </center>
       {/* <center style={{ marginTop: '6em' }}>
         <h1 style={{ fontSize: '2em' }}>Online ordering is down for maintenance 🔧</h1>
