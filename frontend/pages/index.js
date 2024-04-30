@@ -33,7 +33,8 @@ const HomePage = ({ products }) => {
         <p>
           <small>
             Bargains are available to purchase in person with cash/check at 210
-            S Main Street, M-F 8a-4p.
+            S Main Street <br />
+            Monday - Friday, 8AM to 4PM
           </small>
         </p>
       </div>
