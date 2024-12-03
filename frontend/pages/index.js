@@ -58,6 +58,12 @@ const HomePage = ({ products }) => {
             <strong>(NOT VALID 12/24-1/5/25)</strong>
           </p>
 
+          <p className="text-sm text-blue-700 my-4">
+            Email <strong>laurie@wfdl.com</strong> to order
+            <br />
+            Must be picked up in person at 210 S. Main St. FDL
+          </p>
+
           <div className="space-y-4">
             <div className="bg-white p-4 rounded shadow">
               <h3 className="text-lg font-semibold mb-2">Package A</h3>
@@ -94,9 +100,6 @@ const HomePage = ({ products }) => {
               </p>
             </div>
           </div>
-          <p className="text-sm text-gray-700 mt-4">
-            <strong>Must be picked up in person at 210 S. Main St. FDL</strong>
-          </p>
         </div>
       </div>
 
