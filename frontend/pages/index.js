@@ -73,7 +73,7 @@ const HomePage = ({ products }) => {
               </ul>
               <p className="text-sm text-gray-700">
                 Total value = <strong>$2,175</strong>. Check Payable to
-                Salvation Army for <strong>$795</strong>. (1 available)
+                Salvation Army for <strong>$495</strong>. (1 available)
               </p>
             </div>
 
@@ -83,7 +83,7 @@ const HomePage = ({ products }) => {
                 <li>Ski Lifts only value $75 each</li>
               </ul>
               <p className="text-sm text-gray-700">
-                Check Payable to Salvation Army for <strong>$40</strong>. (Limit
+                Check Payable to Salvation Army for <strong>$25</strong>. (Limit
                 8)
               </p>
             </div>
