@@ -73,7 +73,7 @@ const HomePage = ({ products }) => {
               </ul>
               <p className="text-sm text-gray-700">
                 Total value = <strong>$2,175</strong>. Check Payable to
-                Salvation Army for <strong>$495</strong>. (1 available)
+                Salvation Army for <strong>$295</strong>. (1 available)
               </p>
             </div>
 
