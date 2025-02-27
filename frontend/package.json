@@ -2,6 +2,9 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev": "next dev",
     "develop": "next dev",
@@ -11,30 +14,30 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.36",
-    "@fortawesome/free-brands-svg-icons": "^5.15.4",
-    "@fortawesome/free-solid-svg-icons": "^5.15.4",
-    "@fortawesome/react-fontawesome": "^0.1.16",
-    "next": "9.5.5",
-    "postcss-flexbugs-fixes": "^4.2.1",
-    "postcss-preset-env": "^6.7.0",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "tailwindcss": "^1.9.5"
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "next": "^15.2.0",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^10.1.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.9"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "2.x",
-    "@typescript-eslint/parser": "2.x",
+    "@typescript-eslint/eslint-plugin": "8.x",
+    "@typescript-eslint/parser": "8.x",
     "babel-eslint": "10.x",
-    "eslint": "6.x",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-config-react-app": "^5.2.1",
-    "eslint-plugin-flowtype": "4.x",
+    "eslint": "^8.50.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-config-prettier": "^10.0.2",
+    "eslint-plugin-flowtype": "8.x",
     "eslint-plugin-import": "2.x",
     "eslint-plugin-jsx-a11y": "6.x",
-    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-react": "7.x",
-    "eslint-plugin-react-hooks": "2.x",
-    "prettier": "^2.1.2"
+    "eslint-plugin-react-hooks": "5.x",
+    "prettier": "^3.5.2"
   }
 }

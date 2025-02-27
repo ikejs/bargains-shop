@@ -3,7 +3,7 @@ import Link from "next/link";
 const Navbar = () => {
   return (
     <div className="flex justify-between ml-6 mr-6 mt-4">
-      <Link href="/">
+      <Link legacyBehavior href="/">
         <a>
           <img
             src="/logo.png"
