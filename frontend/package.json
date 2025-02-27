@@ -26,12 +26,13 @@
     "tailwindcss": "^4.0.9"
   },
   "devDependencies": {
+    "@next/eslint-plugin-next": "^15.2.0",
     "@typescript-eslint/eslint-plugin": "8.x",
     "@typescript-eslint/parser": "8.x",
     "babel-eslint": "10.x",
     "eslint": "^8.50.0",
-    "eslint-config-react-app": "^7.0.1",
     "eslint-config-prettier": "^10.0.2",
+    "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-flowtype": "8.x",
     "eslint-plugin-import": "2.x",
     "eslint-plugin-jsx-a11y": "6.x",

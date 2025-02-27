@@ -21,7 +21,7 @@ const ProductsList = ({ products }) => {
                   src={getStrapiMedia(
                     _product.image?.formats?.medium
                       ? _product.image.formats.medium.url
-                      : _product.image.formats?.thumbnail?.url
+                      : _product.image.formats?.thumbnail?.url,
                   )}
                   alt={_product.title}
                 />
