@@ -33,6 +33,7 @@ const HomePage = ({ products }) => {
             className="text-blue-600 underline"
             target="_blank"
             href="https://www.radioplusinfo.com/save-big-shop-our-bargains/"
+            rel="noreferrer"
           >
             click here
           </a>
@@ -74,6 +75,18 @@ const HomePage = ({ products }) => {
               <p className="text-sm text-gray-700">
                 Total value = <strong>$2,175</strong>. Check Payable to
                 Salvation Army for <strong>$295</strong>. (1 available)
+              </p>
+            </div>
+
+            <div className="bg-white p-4 rounded shadow">
+              <h3 className="text-lg font-semibold mb-2">Package B</h3>
+              <ul className="text-sm text-gray-700 list-disc list-inside mb-2">
+                <li>Weekend Lodging for 4 at Ski Brule. (Value $850)</li>
+                <li>8 ski lifts (Value $600)</li>
+              </ul>
+              <p className="text-sm text-gray-700">
+                Total value = <strong>$1,450</strong>. Check Payable to
+                Salvation Army for <strong>$150</strong>. (1 available)
               </p>
             </div>
 
