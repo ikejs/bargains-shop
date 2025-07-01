@@ -78,6 +78,9 @@ const ProductPage = ({ product }) => {
             data-item-max-quantity="1"
             data-item-shippable="true"
             data-item-name={product.title}
+            data-config-phone-number="true"
+            // data-item-custom1-name="Phone Number"
+            // data-item-custom1-required="true"
             v-bind="customFields"
           >
             Add to cart
