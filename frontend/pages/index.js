@@ -39,6 +39,69 @@ const HomePage = ({ products }) => {
           </a>
           .
         </p>
+
+        <div className="col-span-full border-t border-gray-300 mt-6 pt-4">
+          <div className="col-span-full mb-6">
+            {/* Banner Image */}
+            <img
+              src="/ski-banner.png"
+              alt="Ski Brule and Salvation Army Banner"
+              className="w-full rounded-md shadow-lg"
+            />
+          </div>
+          <h2 className="text-xl font-semibold mb-2">
+            Ski Brule Offers (purchase in-person only)
+          </h2>
+          <p className="text-sm text-gray-700 mb-4">
+            WFDL/WTCX have donated the following to the Salvation Army Red
+            Kettle Campaign
+            <br />
+            <strong>(NOT VALID 12/24/25 to 1/5/26)</strong>
+          </p>
+
+          <p className="text-sm text-blue-700 my-4">
+            Email <strong>laurie@wfdl.com</strong> to order
+            <br />
+            Must be picked up in person at 210 S. Main St. FDL
+          </p>
+
+          <div className="space-y-4">
+            <div className="bg-white p-4 rounded shadow">
+              <h3 className="text-lg font-semibold mb-2">Package A</h3>
+              <ul className="text-sm text-gray-700 list-disc list-inside mb-2">
+                <li>Weekend Lodging for 8 at Ski Brule. (Value $975)</li>
+                <li>16 ski lifts (Value $1,200)</li>
+              </ul>
+              <p className="text-sm text-gray-700">
+                Total value = <strong>$2,175</strong>. Check Payable to
+                Salvation Army for <strong>$595</strong>. (1 available)
+              </p>
+            </div>
+
+            <div className="bg-white p-4 rounded shadow">
+              <h3 className="text-lg font-semibold mb-2">Package B</h3>
+              <ul className="text-sm text-gray-700 list-disc list-inside mb-2">
+                <li>Weekend Lodging for 4 at Ski Brule. (Value $850)</li>
+                <li>8 ski lifts (Value $600)</li>
+              </ul>
+              <p className="text-sm text-gray-700">
+                Total value = <strong>$1,450</strong>. Check Payable to
+                Salvation Army for <strong>$395</strong>. (1 available)
+              </p>
+            </div>
+
+            <div className="bg-white p-4 rounded shadow">
+              <h3 className="text-lg font-semibold mb-2">Package C</h3>
+              <ul className="text-sm text-gray-700 list-disc list-inside mb-2">
+                <li>Ski Lifts only value $75 each</li>
+              </ul>
+              <p className="text-sm text-gray-700">
+                Check Payable to Salvation Army for <strong>$25</strong>. (Limit
+                8)
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <ProductsList products={products} />
