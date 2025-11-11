@@ -78,7 +78,7 @@ const HomePage = ({ products }) => {
               </p>
             </div> */}
 
-            <div className="bg-white p-4 rounded shadow">
+            {/* <div className="bg-white p-4 rounded shadow">
               <h3 className="text-lg font-semibold mb-2">Package B</h3>
               <ul className="text-sm text-gray-700 list-disc list-inside mb-2">
                 <li>Weekend Lodging for 4 at Ski Brule. (Value $850)</li>
@@ -88,7 +88,7 @@ const HomePage = ({ products }) => {
                 Total value = <strong>$1,450</strong>. Check Payable to
                 Salvation Army for <strong>$395</strong>. (1 available)
               </p>
-            </div>
+            </div> */}
 
             <div className="bg-white p-4 rounded shadow">
               <h3 className="text-lg font-semibold mb-2">Package C</h3>
