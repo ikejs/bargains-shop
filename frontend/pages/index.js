@@ -13,9 +13,9 @@ const HomePage = ({ products }) => {
         <title>Online Bargains - Radio Plus</title>
       </Head>
       <div className="m-6 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 mt-8 bg-gray-100 py-8 px-6 shadow-md rounded-lg">
-        <h1 className="col-span-full text-2xl font-bold text-center mb-4">
-          Welcome to Online Bargains
-        </h1>
+        <p className="col-span-full text-md font-semibold text-yellow-700 text-center mb-4">
+          Transacted through Fond du Lac office only.
+        </p>
         <p className="col-span-full text-sm text-gray-700 mb-4">
           <strong>
             Limit 1 certificate per business, per household every 30 days. You
@@ -40,9 +40,9 @@ const HomePage = ({ products }) => {
           .
         </p>
 
+        {/* Ski Brule section - commented out
         <div className="col-span-full border-t border-gray-300 mt-6 pt-4">
           <div className="col-span-full mb-6">
-            {/* Banner Image */}
             <img
               src="/ski-banner.png"
               alt="Ski Brule and Salvation Army Banner"
@@ -66,7 +66,7 @@ const HomePage = ({ products }) => {
           </p>
 
           <div className="space-y-4">
-            {/* <div className="bg-white p-4 rounded shadow">
+            <div className="bg-white p-4 rounded shadow">
               <h3 className="text-lg font-semibold mb-2">Package A</h3>
               <ul className="text-sm text-gray-700 list-disc list-inside mb-2">
                 <li>Weekend Lodging for 8 at Ski Brule. (Value $975)</li>
@@ -76,9 +76,9 @@ const HomePage = ({ products }) => {
                 Total value = <strong>$2,175</strong>. Check Payable to
                 Salvation Army for <strong>$595</strong>. (1 available)
               </p>
-            </div> */}
+            </div>
 
-            {/* <div className="bg-white p-4 rounded shadow">
+            <div className="bg-white p-4 rounded shadow">
               <h3 className="text-lg font-semibold mb-2">Package B</h3>
               <ul className="text-sm text-gray-700 list-disc list-inside mb-2">
                 <li>Weekend Lodging for 4 at Ski Brule. (Value $850)</li>
@@ -88,7 +88,7 @@ const HomePage = ({ products }) => {
                 Total value = <strong>$1,450</strong>. Check Payable to
                 Salvation Army for <strong>$395</strong>. (1 available)
               </p>
-            </div> */}
+            </div>
 
             <div className="bg-white p-4 rounded shadow">
               <h3 className="text-lg font-semibold mb-2">Package C</h3>
@@ -102,6 +102,7 @@ const HomePage = ({ products }) => {
             </div>
           </div>
         </div>
+        */}
       </div>
 
       <ProductsList products={products} />
