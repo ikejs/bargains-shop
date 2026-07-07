@@ -6,11 +6,11 @@ const Navbar = () => {
       <Link legacyBehavior href="/">
         <a>
           <img
-            src="/logo.png"
-            alt="home"
+            src="/logo.svg"
+            alt="Radio Plus Bargains"
             className="logo"
-            height="200"
-            width="200"
+            height="44"
+            width="248"
           />
         </a>
       </Link>
