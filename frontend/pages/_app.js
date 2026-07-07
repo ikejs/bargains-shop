@@ -1,26 +1,48 @@
 import App from "next/app";
 import Head from "next/head";
+import Script from "next/script";
+import { Outfit } from "next/font/google";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import Layout from "../components/Layout";
 import { getCategories } from "../utils/api";
 import "../styles/index.css";
 
+config.autoAddCss = false;
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  display: "swap",
+});
+
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <Layout categories={pageProps.categories}>
-      <Head>
-        <link rel="icon" href="/favicon.ico" sizes="48x48" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="preconnect" href="https://app.snipcart.com" />
-        <link rel="preconnect" href="https://cdn.snipcart.com" />
-        <link
-          rel="stylesheet"
-          href="https://cdn.snipcart.com/themes/v3.0.16/default/snipcart.css"
+    <div className={`${outfit.variable} font-sans`}>
+      <Layout categories={pageProps.categories}>
+        <Head>
+          <meta name="theme-color" content="#05060f" />
+          <meta
+            name="description"
+            content="Gift certificates to Fond du Lac area businesses at a fraction of face value — from Radio Plus."
+          />
+          <link rel="icon" href="/favicon.ico" sizes="48x48" />
+          <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+          <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+          <link rel="preconnect" href="https://app.snipcart.com" />
+          <link rel="preconnect" href="https://cdn.snipcart.com" />
+          <link
+            rel="stylesheet"
+            href="https://cdn.snipcart.com/themes/v3.9.0/default/snipcart.css"
+          />
+        </Head>
+        <Script
+          src="https://cdn.snipcart.com/themes/v3.9.0/default/snipcart.js"
+          strategy="afterInteractive"
         />
-        <script src="https://cdn.snipcart.com/themes/v3.0.16/default/snipcart.js" />
-      </Head>
-      <Component {...pageProps} />
-    </Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </div>
   );
 };
 

@@ -1,6 +1,56 @@
 import Head from "next/head";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowUpRightFromSquare,
+  faCircleInfo,
+  faStore,
+  faTowerBroadcast,
+} from "@fortawesome/free-solid-svg-icons";
 import ProductsList from "../components/ProductsList";
 import { getProducts } from "../utils/api";
+
+const notices = [
+  {
+    icon: faStore,
+    title: "Buy in person",
+    body: (
+      <>
+        Bargains are available to purchase with cash/check at{" "}
+        <strong className="text-white">210 S Main Street</strong>, Monday –
+        Friday, 8AM to 4PM. Transacted through the Fond du Lac office only.
+      </>
+    ),
+  },
+  {
+    icon: faCircleInfo,
+    title: "The fine print",
+    body: (
+      <>
+        Limit <strong className="text-white">1 certificate</strong> per
+        business, per household every 30 days. You may only use 1 certificate
+        per business visit and cannot combine 2 certificates on the same bill.
+      </>
+    ),
+  },
+  {
+    icon: faTowerBroadcast,
+    title: "Waupun deals",
+    body: (
+      <>
+        Looking for Waupun radio program deals?{" "}
+        <a
+          className="font-semibold text-[#8f97ff] underline decoration-[#1f2aff]/50 underline-offset-4 transition-colors hover:text-white"
+          target="_blank"
+          href="https://www.radioplusinfo.com/save-big-shop-our-bargains/"
+          rel="noreferrer"
+        >
+          Shop them here
+        </a>
+        .
+      </>
+    ),
+  },
+];
 
 const HomePage = ({ products }) => {
   products = products
@@ -12,100 +62,78 @@ const HomePage = ({ products }) => {
       <Head>
         <title>Online Bargains - Radio Plus</title>
       </Head>
-      <div className="m-6 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 mt-8 bg-gray-100 py-8 px-6 shadow-md rounded-lg">
-        <p className="col-span-full text-md font-semibold text-yellow-700 text-center mb-4">
-          Transacted through Fond du Lac office only.
-        </p>
-        <p className="col-span-full text-sm text-gray-700 mb-4">
-          <strong>
-            Limit 1 certificate per business, per household every 30 days. You
-            may only use 1 certificate per business visit and cannot combine 2
-            certificates on the same bill.
-          </strong>
-        </p>
-        <p className="col-span-full text-sm text-gray-700 mb-4">
-          Bargains are available to purchase in person with cash/check at{" "}
-          <strong>210 S Main Street</strong>, Monday - Friday, 8AM to 4PM.
-        </p>
-        <p className="col-span-full text-sm text-gray-700 text-center mb-6">
-          For Waupun radio program deals,{" "}
-          <a
-            className="text-blue-600 underline"
-            target="_blank"
-            href="https://www.radioplusinfo.com/save-big-shop-our-bargains/"
-            rel="noreferrer"
-          >
-            click here
-          </a>
-          .
-        </p>
 
-        {/* Ski Brule section - commented out
-        <div className="col-span-full border-t border-gray-300 mt-6 pt-4">
-          <div className="col-span-full mb-6">
-            <img
-              src="/ski-banner.png"
-              alt="Ski Brule and Salvation Army Banner"
-              className="w-full rounded-md shadow-lg"
-            />
-          </div>
-          <h2 className="text-xl font-semibold mb-2">
-            Ski Brule Offers (purchase in-person only)
-          </h2>
-          <p className="text-sm text-gray-700 mb-4">
-            WFDL/WTCX have donated the following to the Salvation Army Red
-            Kettle Campaign
-            <br />
-            <strong>(NOT VALID 12/24/25 to 1/5/26)</strong>
-          </p>
-
-          <p className="text-sm text-blue-700 my-4">
-            Email <strong>laurie@wfdl.com</strong> to order
-            <br />
-            Must be picked up in person at 210 S. Main St. FDL
-          </p>
-
-          <div className="space-y-4">
-            <div className="bg-white p-4 rounded shadow">
-              <h3 className="text-lg font-semibold mb-2">Package A</h3>
-              <ul className="text-sm text-gray-700 list-disc list-inside mb-2">
-                <li>Weekend Lodging for 8 at Ski Brule. (Value $975)</li>
-                <li>16 ski lifts (Value $1,200)</li>
-              </ul>
-              <p className="text-sm text-gray-700">
-                Total value = <strong>$2,175</strong>. Check Payable to
-                Salvation Army for <strong>$595</strong>. (1 available)
-              </p>
-            </div>
-
-            <div className="bg-white p-4 rounded shadow">
-              <h3 className="text-lg font-semibold mb-2">Package B</h3>
-              <ul className="text-sm text-gray-700 list-disc list-inside mb-2">
-                <li>Weekend Lodging for 4 at Ski Brule. (Value $850)</li>
-                <li>8 ski lifts (Value $600)</li>
-              </ul>
-              <p className="text-sm text-gray-700">
-                Total value = <strong>$1,450</strong>. Check Payable to
-                Salvation Army for <strong>$395</strong>. (1 available)
-              </p>
-            </div>
-
-            <div className="bg-white p-4 rounded shadow">
-              <h3 className="text-lg font-semibold mb-2">Package C</h3>
-              <ul className="text-sm text-gray-700 list-disc list-inside mb-2">
-                <li>Ski Lifts only value $75 each</li>
-              </ul>
-              <p className="text-sm text-gray-700">
-                Check Payable to Salvation Army for <strong>$25</strong>. (Limit
-                8)
-              </p>
-            </div>
-          </div>
+      <section className="relative mb-16 mt-14 sm:mt-20">
+        <div aria-hidden className="absolute -top-10 right-4 hidden lg:block">
+          <img
+            src="/favicon.svg"
+            alt=""
+            className="tag-float h-52 w-52 opacity-90 drop-shadow-[0_0_60px_rgba(31,42,255,0.55)]"
+          />
         </div>
-        */}
-      </div>
+        <p className="text-xs font-bold uppercase tracking-[0.3em] text-indigo-300">
+          Radio Plus · Fond du Lac
+        </p>
+        <h1 className="mt-4 text-5xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-7xl">
+          Local deals,
+          <br />
+          <span className="text-gradient">half the price.</span>
+        </h1>
+        <p className="mt-5 max-w-xl text-lg leading-relaxed text-indigo-100/70">
+          Gift certificates to Fond du Lac area businesses at a fraction of face
+          value — straight from your favorite local radio stations.
+        </p>
+        <div className="mt-8 flex flex-wrap items-center gap-4">
+          <a
+            href="#deals"
+            className="rounded-full bg-[#1f2aff] px-7 py-3.5 text-sm font-bold text-white shadow-[0_8px_30px_rgba(31,42,255,0.45)] transition-all duration-300 hover:bg-[#4552ff] hover:shadow-[0_8px_40px_rgba(31,42,255,0.65)]"
+          >
+            Shop the deals
+          </a>
+          <a
+            href="https://www.radioplusinfo.com/save-big-shop-our-bargains/"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 rounded-full bg-white/5 px-7 py-3.5 text-sm font-bold text-indigo-100 backdrop-blur transition-all duration-300 hover:bg-white/10 hover:text-white"
+          >
+            Waupun deals
+            <FontAwesomeIcon
+              icon={faArrowUpRightFromSquare}
+              className="h-3 w-3 opacity-60"
+            />
+          </a>
+        </div>
+      </section>
 
-      <ProductsList products={products} />
+      <section className="mb-16 grid gap-4 sm:grid-cols-3">
+        {notices.map((notice) => (
+          <div key={notice.title} className="glass-panel px-6 py-5">
+            <div className="flex items-center gap-3">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#1f2aff]/20 text-[#8f97ff]">
+                <FontAwesomeIcon icon={notice.icon} className="h-4 w-4" />
+              </span>
+              <h2 className="text-sm font-bold uppercase tracking-wider text-white">
+                {notice.title}
+              </h2>
+            </div>
+            <p className="mt-3 text-sm leading-relaxed text-indigo-100/70">
+              {notice.body}
+            </p>
+          </div>
+        ))}
+      </section>
+
+      <section id="deals" className="scroll-mt-24">
+        <div className="mb-6 flex items-baseline justify-between">
+          <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
+            This week&apos;s bargains
+          </h2>
+          <p className="text-sm text-indigo-100/50">
+            {products.length} deal{products.length === 1 ? "" : "s"}
+          </p>
+        </div>
+        <ProductsList products={products} />
+      </section>
     </div>
   );
 };

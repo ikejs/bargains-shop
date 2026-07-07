@@ -1,5 +1,267 @@
 @import "tailwindcss";
 
+/*
+  Radio Plus Bargains — dark glass design system
+  Brand blue: #1F2AFF (from /Branding - Bargains)
+*/
+
+@theme {
+  --font-sans:
+    var(--font-outfit), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+  --color-brand: #1f2aff;
+  --color-brand-bright: #4e5bff;
+  --color-brand-soft: #8f97ff;
+  --color-ink: #05060f;
+}
+
+@layer base {
+  html {
+    background-color: #05060f;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    color: #e7e9ff;
+  }
+
+  ::selection {
+    background: rgba(31, 42, 255, 0.45);
+    color: #fff;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(143, 151, 255, 0.25) transparent;
+  }
+}
+
+@layer components {
+  /* Borderless glass surface: blur + inner top sheen, no hard border */
+  .glass-panel {
+    @apply backdrop-blur-xl;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.07),
+      rgba(255, 255, 255, 0.03)
+    );
+    border-radius: 1.25rem;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 20px 50px -20px rgba(0, 0, 0, 0.6);
+  }
+
+  .text-gradient {
+    background: linear-gradient(92deg, #8f97ff 0%, #4e5bff 45%, #22d3ee 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Aurora background blobs */
+  .aurora {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(110px);
+    will-change: transform;
+  }
+
+  .aurora-a {
+    top: -22%;
+    left: -12%;
+    width: 55vw;
+    height: 55vw;
+    background: radial-gradient(circle, rgba(31, 42, 255, 0.4), transparent 65%);
+    animation: aurora-a 26s ease-in-out infinite alternate;
+  }
+
+  .aurora-b {
+    top: -10%;
+    right: -18%;
+    width: 45vw;
+    height: 45vw;
+    background: radial-gradient(
+      circle,
+      rgba(124, 58, 237, 0.28),
+      transparent 65%
+    );
+    animation: aurora-b 32s ease-in-out infinite alternate;
+  }
+
+  .aurora-c {
+    bottom: -30%;
+    left: 25%;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(
+      circle,
+      rgba(34, 211, 238, 0.14),
+      transparent 65%
+    );
+    animation: aurora-c 38s ease-in-out infinite alternate;
+  }
+
+  .tag-float {
+    animation: tag-float 7s ease-in-out infinite;
+  }
+
+  /* backdrop-filter gets stripped by the CSS pipeline outside @layer,
+     so the Snipcart glass blur lives here (nothing in snipcart.css competes) */
+  #snipcart .snipcart-modal,
+  #snipcart .snipcart-modal__container {
+    @apply backdrop-blur-2xl;
+  }
+}
+
+@keyframes aurora-a {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(8vw, 6vh, 0) scale(1.15);
+  }
+}
+
+@keyframes aurora-b {
+  from {
+    transform: translate3d(0, 0, 0) scale(1.1);
+  }
+  to {
+    transform: translate3d(-6vw, 10vh, 0) scale(0.95);
+  }
+}
+
+@keyframes aurora-c {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(-8vw, -6vh, 0) scale(1.2);
+  }
+}
+
+@keyframes tag-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(3deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora,
+  .tag-float {
+    animation: none;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Snipcart (cart + checkout) — dark glass theme via CSS variables     */
+/* ------------------------------------------------------------------ */
+
+#snipcart {
+  font-family: var(--font-sans);
+
+  --color-default: #e7e9ff;
+  --color-alt: rgba(231, 233, 255, 0.62);
+  --color-icon: #a5adff;
+  --color-link: #8f97ff;
+  --color-input: #ffffff;
+  --color-inputLabel: #a5adff;
+  --color-inputIcon: rgba(231, 233, 255, 0.5);
+  --color-inputPlaceholder: rgba(231, 233, 255, 0.35);
+  --color-buttonPrimary: #ffffff;
+  --color-buttonSecondary: #c7ccff;
+  --color-badge: #ffffff;
+  --color-badge-active: #ffffff;
+  --color-badge-disabled: rgba(231, 233, 255, 0.4);
+
+  --bgColor-default: #0b0e1f;
+  --bgColor-alt: #11152b;
+  --bgColor-modal: rgba(10, 13, 28, 0.92);
+  --bgColor-modalVeil: rgba(3, 4, 12, 0.72);
+  --bgColor-input: rgba(255, 255, 255, 0.06);
+  --bgColor-inputAutofill: #11152b;
+  --bgColor-buttonPrimary: #1f2aff;
+  --bgColor-buttonPrimary-hover: #4552ff;
+  --bgColor-buttonPrimary-active: #1b24db;
+  --bgColor-buttonSecondary: rgba(255, 255, 255, 0.08);
+  --bgColor-buttonSecondary-hover: rgba(255, 255, 255, 0.14);
+  --bgColor-buttonSecondary-active: rgba(255, 255, 255, 0.1);
+  --bgColor-badge: rgba(31, 42, 255, 0.9);
+  --bgColor-badge-active: #1f2aff;
+  --bgColor-badge-disabled: rgba(255, 255, 255, 0.08);
+  --bgColor-info: rgba(78, 91, 255, 0.16);
+  --bgColor-error: rgba(244, 63, 94, 0.16);
+  --bgColor-success: rgba(52, 211, 153, 0.16);
+
+  --borderColor-default: rgba(255, 255, 255, 0.08);
+  --borderColor-input: rgba(255, 255, 255, 0.12);
+  --borderColor-input-hover: rgba(143, 151, 255, 0.5);
+  --borderColor-input-focus: #4e5bff;
+  --borderColor-error: rgba(244, 63, 94, 0.6);
+
+  --shadow-default: 0 20px 50px -20px rgba(0, 0, 0, 0.6);
+  --shadow-input-focus: 0 0 0 3px rgba(78, 91, 255, 0.25);
+  --shadow-buttonPrimary-hover: 0 8px 30px rgba(31, 42, 255, 0.45);
+  --shadow-buttonSecondary-hover: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+#snipcart * {
+  font-family: var(--font-sans) !important;
+}
+
+/* Keep the modal surfaces above the sticky navbar (z-50) */
+#snipcart .snipcart-modal,
+#snipcart .snipcart-modal__container {
+  z-index: 100;
+}
+
+#snipcart .snipcart-modal__container {
+  box-shadow: -24px 0 60px rgba(0, 0, 0, 0.55);
+}
+
+/* Cart items as soft glass cards */
+#snipcart .snipcart-item-line {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+#snipcart .snipcart-base-button,
+#snipcart .snipcart-button-primary {
+  border-radius: 12px;
+}
+
+/* State/country typeahead dropdown */
+#snipcart .snipcart-typeahead__suggestions {
+  background: #11152b;
+  color: #e7e9ff;
+  box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.8);
+}
+
+#snipcart .snipcart-typeahead__suggestion {
+  color: #e7e9ff;
+}
+
+#snipcart .snipcart-typeahead__suggestion--active,
+#snipcart .snipcart-typeahead__suggestion:hover {
+  background: rgba(78, 91, 255, 0.25);
+  color: #ffffff;
+}
+
+#snipcart .snipcart-featured-payment-methods {
+  background: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#snipcart .snipcart-featured-payment-methods__title {
+  color: rgba(231, 233, 255, 0.5);
+}
+
+/* Quantity is fixed at 1 per certificate — hide the picker */
 .snipcart-item-quantity__quantity {
   display: none;
 }

@@ -1,44 +1,73 @@
 import Link from "next/link";
 import { getStrapiMedia } from "../utils/medias";
-import styles from "./ProductList.module.css";
+
+export const savingsPercent = (product) =>
+  product.value > 0 && product.price < product.value
+    ? Math.round((1 - product.price / product.value) * 100)
+    : 0;
 
 const ProductsList = ({ products }) => {
+  if (!products?.length) {
+    return (
+      <div className="glass-panel my-10 px-8 py-16 text-center">
+        <p className="text-lg font-semibold text-white">
+          No bargains right now
+        </p>
+        <p className="mt-2 text-sm text-indigo-100/60">
+          Check back soon — new deals drop all the time.
+        </p>
+      </div>
+    );
+  }
+
   return (
-    <div className="m-6 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 mt-8">
-      {products.map((_product) => (
-        <div
-          key={_product.id}
-          className="border rounded-lg bg-gray-100 hover:shadow-lg shadow-md"
-        >
-          <Link legacyBehavior href={`/products/${_product.slug}`}>
-            {/* <Link href={`javascript:alert('Purchase at 210 S Main St Fond du Lac')`}> */}
-            <a>
-              <div
-                className={`rounded-t-lg bg-white pt-2 pb-2 ${styles.image}`}
-              >
-                <img
-                  className="crop mx-auto"
-                  src={getStrapiMedia(
-                    _product.image?.formats?.medium
-                      ? _product.image.formats.medium.url
-                      : _product.image.formats?.thumbnail?.url,
-                  )}
-                  alt={_product.title}
-                />
+    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {products.map((product) => {
+        const percent = savingsPercent(product);
+        return (
+          <Link
+            key={product.id}
+            href={`/products/${product.slug}`}
+            className="glass-panel group block overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_0_45px_-5px_rgba(31,42,255,0.45)]"
+          >
+            <div className="relative m-3 mb-0 flex h-48 items-center justify-center overflow-hidden rounded-xl bg-white p-4">
+              <img
+                className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                src={getStrapiMedia(
+                  product.image?.formats?.medium
+                    ? product.image.formats.medium.url
+                    : product.image?.formats?.thumbnail?.url,
+                )}
+                alt={product.title}
+                loading="lazy"
+              />
+              {percent > 0 && (
+                <span className="absolute right-3 top-3 rounded-full bg-[#1f2aff] px-3 py-1 text-xs font-bold text-white shadow-[0_4px_20px_rgba(31,42,255,0.5)]">
+                  {percent}% OFF
+                </span>
+              )}
+            </div>
+            <div className="p-5">
+              <p className="truncate text-lg font-bold text-white">
+                {product.title}
+              </p>
+              <p className="mt-0.5 text-sm text-indigo-100/60">
+                ${product.value} {product.type}
+              </p>
+              <div className="mt-3 flex items-baseline gap-2">
+                <span className="text-2xl font-extrabold text-white">
+                  ${product.price}
+                </span>
+                {product.value > product.price && (
+                  <span className="text-sm text-indigo-100/40 line-through">
+                    ${product.value}
+                  </span>
+                )}
               </div>
-              <div className="pl-4 pr-4 pb-4 pt-4 rounded-lg">
-                <div className="mt-1 text-base leading-tight truncate text-gray-700">
-                  <p className="font-semibold text-xl">
-                    <strong>{_product.title}</strong>
-                  </p>
-                  ${_product.value} {_product.type} for{" "}
-                  <strong className="text-green-600">${_product.price}</strong>
-                </div>
-              </div>
-            </a>
+            </div>
           </Link>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };
