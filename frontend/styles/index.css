@@ -111,6 +111,14 @@
   #snipcart .snipcart-modal__container {
     @apply backdrop-blur-2xl;
   }
+
+  /* The live credit card iframe ignores Snipcart's style-customization
+     API and paints itself white, so dark-mode it visually from outside.
+     `snipcart-live-payment` is set in _app.js; the sandbox form is
+     already dark via the API and must not be inverted. */
+  .snipcart-live-payment #snipcart .snipcart-payment-card-form iframe {
+    filter: invert(0.94) hue-rotate(180deg);
+  }
 }
 
 @keyframes aurora-a {

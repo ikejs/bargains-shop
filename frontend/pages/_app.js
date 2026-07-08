@@ -18,7 +18,10 @@ const outfit = Outfit({
 });
 
 // The credit card fields live in a cross-origin Snipcart iframe, so the
-// dark theme has to be passed through Snipcart's customization API.
+// dark theme has to be passed through Snipcart's customization API. The
+// live payment form ignores that API (only the sandbox form honors it),
+// so live mode instead gets a CSS invert filter on the iframe, gated by
+// the `snipcart-live-payment` class set below.
 const themePaymentForm = () => {
   window.Snipcart?.api?.theme?.customization?.registerPaymentFormCustomization({
     input: {
@@ -34,6 +37,25 @@ const themePaymentForm = () => {
       fontSize: "14px",
     },
   });
+
+  const flagLiveMode = () => {
+    const session = window.Snipcart.store.getState().session;
+    if (session.loading) {
+      return false;
+    }
+    document.documentElement.classList.toggle(
+      "snipcart-live-payment",
+      !session.isSandboxMode,
+    );
+    return true;
+  };
+  if (!flagLiveMode()) {
+    const unsubscribe = window.Snipcart.store.subscribe(() => {
+      if (flagLiveMode()) {
+        unsubscribe();
+      }
+    });
+  }
 };
 
 const MyApp = ({ Component, pageProps }) => {
