@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import App from "next/app";
 import Head from "next/head";
 import Script from "next/script";
@@ -16,7 +17,36 @@ const outfit = Outfit({
   display: "swap",
 });
 
+// The credit card fields live in a cross-origin Snipcart iframe, so the
+// dark theme has to be passed through Snipcart's customization API.
+const themePaymentForm = () => {
+  window.Snipcart?.api?.theme?.customization?.registerPaymentFormCustomization({
+    input: {
+      color: "#e7e9ff",
+      fontSize: "15px",
+      backgroundColor: "transparent",
+      "::placeholder": {
+        color: "rgba(231, 233, 255, 0.4)",
+      },
+    },
+    label: {
+      color: "#a5adff",
+      fontSize: "14px",
+    },
+  });
+};
+
 const MyApp = ({ Component, pageProps }) => {
+  useEffect(() => {
+    if (window.Snipcart) {
+      themePaymentForm();
+      return undefined;
+    }
+    document.addEventListener("snipcart.ready", themePaymentForm);
+    return () =>
+      document.removeEventListener("snipcart.ready", themePaymentForm);
+  }, []);
+
   return (
     <div className={`${outfit.variable} font-sans`}>
       <Layout categories={pageProps.categories}>
